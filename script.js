@@ -10,6 +10,18 @@ function defeatMonster() {
     alert("몬스터 젤리를 얻었다!");
 }
 
+function resetInventory(){
+
+    inventory = [];
+
+    saveInventory();
+
+    showInventory();
+
+    alert("인벤토리가 초기화되었습니다.");
+
+}
+
 function showInventory() {
     const list = document.getElementById("inventoryList");
     if (!list) return;
@@ -33,3 +45,4 @@ function showInventory() {
 window.onload = function () {
     showInventory();
 };
+
