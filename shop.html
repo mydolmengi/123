@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상점</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🛒 상점</h1>
+
+<p>골드 : <span id="gold"></span></p>
+
+<button onclick="buyItem('강철 검', 50)">
+강철 검 (50G)
+</button>
+
+<button onclick="buyItem('방패', 40)">
+방패 (40G)
+</button>
+
+<button onclick="buyItem('회복 물약', 20)">
+회복 물약 (20G)
+</button>
+
+<button onclick="buyItem('마법 지팡이', 80)">
+마법 지팡이 (80G)
+</button>
+
+<br><br>
+
+<a href="index.html">
+<button>메인 방</button>
+</a>
+
+<a href="room2.html">
+<button>창고</button>
+</a>
+
+<a href="room3.html">
+<button>던전</button>
+</a>
+
+<div class="inventory">
+<h2>인벤토리</h2>
+<ul id="inventory"></ul>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
