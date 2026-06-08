@@ -1,23 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>메인 방</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>몬스터 클릭 예시</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #222;
+      color: white;
+    }
+
+    .monster {
+      width: 150px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 10px 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-<h1>🏠 메인 방</h1>
+  <h1>던전 화면</h1>
+  <p>몬스터를 클릭하면 몬스터 젤리를 얻는다.</p>
 
-<button class="action-btn" onclick="addItem('나무 검')">검 줍기</button>
+  <img
+    src="monster.png"
+    alt="몬스터"
+    class="monster"
+    onclick="defeatMonster()"
+  >
 
-<br><br>
+  <br>
 
-<a href="room2.html"><button>창고 이동</button></a>
-<a href="room3.html"><button>던전 이동</button></a>
-<a href="shop.html"><button>상점 이동</button></a>
-<a href="inventory.html"><button>인벤토리</button></a>
+  <a href="inventory.html">
+    <button>인벤토리 보기</button>
+  </a>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
