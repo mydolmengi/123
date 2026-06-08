@@ -12,8 +12,7 @@ function defeatMonster() {
 
 function resetInventory(){
 
-      alert("버튼 클릭됨!");
-
+    
 
     inventory = [];
 
