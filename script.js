@@ -1,54 +1,59 @@
-// 인벤토리 불러오기
 let inventory = JSON.parse(localStorage.getItem("inventory")) || [];
-
-// 골드
 let gold = Number(localStorage.getItem("gold")) || 100;
 
-function saveGame(){
+function saveGame() {
     localStorage.setItem("inventory", JSON.stringify(inventory));
     localStorage.setItem("gold", gold);
 }
 
-function addItem(item){
+function addItem(item) {
     inventory.push(item);
     saveGame();
-    displayInventory();
+    alert(item + " 획득!");
 }
 
-function displayInventory(){
-    const list = document.getElementById("inventory");
+function buyItem(item, price) {
+    if (gold >= price) {
+        gold -= price;
+        inventory.push(item);
+        saveGame();
+        alert(item + " 구매 완료!");
+        updateGoldText();
+    } else {
+        alert("골드가 부족합니다!");
+    }
+}
 
-    if(!list) return;
-
-    list.innerHTML = "";
-
-    inventory.forEach(item=>{
-        const li = document.createElement("li");
-        li.textContent = item;
-        list.appendChild(li);
-    });
-
+function updateGoldText() {
     const goldText = document.getElementById("gold");
-
-    if(goldText){
+    if (goldText) {
         goldText.textContent = gold;
     }
 }
 
-function buyItem(item, price){
+function displayInventory() {
+    const list = document.getElementById("inventoryList");
+    if (!list) return;
 
-    if(gold >= price){
-        gold -= price;
-        inventory.push(item);
+    list.innerHTML = "";
 
-        saveGame();
-        displayInventory();
-
-        alert(item + " 구매 완료!");
+    if (inventory.length === 0) {
+        const li = document.createElement("li");
+        li.textContent = "인벤토리가 비어 있습니다.";
+        list.appendChild(li);
+        return;
     }
-    else{
-        alert("골드 부족!");
-    }
+
+    inventory.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${index + 1}. ${item}`;
+        list.appendChild(li);
+    });
+
+    updateGoldText();
 }
 
-window.onload = displayInventory;
+window.onload = function () {
+    updateGoldText();
+    displayInventory();
+};
