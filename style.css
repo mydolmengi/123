@@ -3,16 +3,40 @@ body{
     text-align:center;
     background:#222;
     color:white;
+    margin:0;
+    padding:30px;
 }
 
 button{
-    padding:10px;
+    padding:10px 16px;
     margin:5px;
     cursor:pointer;
+    border:none;
+    border-radius:8px;
 }
 
-.inventory{
-    margin-top:20px;
+a button{
+    background:#4a90e2;
+    color:white;
+}
+
+.action-btn{
+    background:#f39c12;
+    color:white;
+}
+
+.inventory-box{
+    margin-top:30px;
     border:1px solid white;
-    padding:10px;
+    border-radius:12px;
+    padding:20px;
+    max-width:400px;
+    margin-left:auto;
+    margin-right:auto;
+    background:#333;
+}
+
+ul{
+    list-style:none;
+    padding:0;
 }
